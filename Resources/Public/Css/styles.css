@@ -30,6 +30,7 @@
 .dpnglossary.link {
     display: inline;
     position: relative;
+    cursor: pointer;
 }
 .dpnglossary.link:hover:after {
     background: rgba(0, 0, 0, 0.8);

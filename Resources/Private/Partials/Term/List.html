@@ -5,14 +5,17 @@
   <dl>
     <f:for each="{terms}" as="term">
       <dt>
-        <f:if condition="{term.termMode} == 'link'">
-          <f:then>
-            <f:link.typolink parameter="{term.termLink}">{term.name}</f:link.typolink>
-          </f:then>
-          <f:else>
-            <f:link.action action="show" arguments="{term: term}">{term.name}</f:link.action>
-          </f:else>
-        </f:if>
+        <f:comment>
+          <f:if condition="{term.termMode} == 'link'">
+            <f:then>
+              <f:link.typolink parameter="{term.termLink}">{term.name}</f:link.typolink>
+            </f:then>
+            <f:else>
+              <f:link.action action="show" arguments="{term: term}">{term.name}</f:link.action>
+            </f:else>
+          </f:if>
+        </f:comment>
+        {term.name}
       </dt>
       <dd>{term.tooltiptext}</dd>
     </f:for>
