@@ -18,6 +18,9 @@
       <trans-unit id="tx_dpnglossary_domain_model_term.tooltiptext">
         <target>Text der im CSS Tooltip angezeigt wird</target>
       </trans-unit>
+      <trans-unit id="tx_dpnglossary_domain_model_term.pseudotext">
+        <target>Leichte Sprache</target>
+      </trans-unit>
       <trans-unit id="tx_dpnglossary_domain_model_term.descriptions">
         <target>Beschreibungen des Begriffes</target>
       </trans-unit>

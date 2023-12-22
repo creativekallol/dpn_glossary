@@ -26,11 +26,11 @@ return [
         'security' => [
             'ignorePageTypeRestriction' => true,
         ],
-        'searchFields' => 'name,tooltiptext,descriptions,synonyms,term_type,term_lang,images,',
+        'searchFields' => 'name,tooltiptext,pseudotext,descriptions,synonyms,term_type,term_lang,images,',
         'iconfile' => 'EXT:dpn_glossary/Resources/Public/Icons/Term.png',
     ],
     'types' => [
-        '1' => ['showitem' => 'sys_language_uid, --palette--;;hidden_exludefromparsing_casesensitive, name, url_segment, tooltiptext, term_mode, term_link, synonyms, descriptions, term_type, term_lang, media, --div--;LLL:EXT:dpn_glossary/Resources/Private/Language/locallang.xlf:tx_dpnglossary_domain_model_term.divider.seo, seo_title, meta_description, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
+        '1' => ['showitem' => 'sys_language_uid, --palette--;;hidden_exludefromparsing_casesensitive, name, url_segment, tooltiptext, pseudotext, term_mode, term_link, synonyms, descriptions, term_type, term_lang, media, --div--;LLL:EXT:dpn_glossary/Resources/Private/Language/locallang.xlf:tx_dpnglossary_domain_model_term.divider.seo, seo_title, meta_description, --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.access, starttime, endtime'],
     ],
     'palettes' => [
         'hidden_exludefromparsing_casesensitive' => ['showitem' => 'hidden, case_sensitive, --linebreak--, max_replacements, exclude_from_parsing'],
@@ -152,6 +152,16 @@ return [
         'tooltiptext' => [
             'exclude' => true,
             'label' => 'LLL:EXT:dpn_glossary/Resources/Private/Language/locallang.xlf:tx_dpnglossary_domain_model_term.tooltiptext',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'max' => 255,
+                'eval' => 'trim',
+            ],
+        ],
+        'pseudotext' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:dpn_glossary/Resources/Private/Language/locallang.xlf:tx_dpnglossary_domain_model_term.pseudotext',
             'config' => [
                 'type' => 'input',
                 'size' => 30,

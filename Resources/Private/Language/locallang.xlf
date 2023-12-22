@@ -7,7 +7,7 @@
         <source>Term</source>
       </trans-unit>
       <trans-unit id="tx_dpnglossary_domain_model_term.name">
-        <source>name of the term</source>
+        <source>Name of the term</source>
       </trans-unit>
       <trans-unit id="tx_dpnglossary_domain_model_term.url_segment">
         <source>URL segment</source>
@@ -16,10 +16,13 @@
         <source>This can either be the detailpage URL part or used as an anchor link</source>
       </trans-unit>
       <trans-unit id="tx_dpnglossary_domain_model_term.tooltiptext">
-        <source>text shown in the css tooltip</source>
+        <source>Text shown in the css tooltip</source>
+      </trans-unit>
+      <trans-unit id="tx_dpnglossary_domain_model_term.pseudotext">
+        <source>Pseudo Language</source>
       </trans-unit>
       <trans-unit id="tx_dpnglossary_domain_model_term.descriptions">
-        <source>descriptions of the term</source>
+        <source>Descriptions of the term</source>
       </trans-unit>
       <trans-unit id="tx_dpnglossary_domain_model_term.synonyms">
         <source>Synonyms</source>
@@ -157,7 +160,7 @@
 
 
       <trans-unit id="tx_dpnglossary.error.slug_preview_site_missing">
-        <source>no site configuration</source>
+        <source>No site configuration</source>
       </trans-unit>
 
 
@@ -165,10 +168,10 @@
         <source>Evaluation type for the term slug</source>
       </trans-unit>
       <trans-unit id="extensionsettings.term_slug_evaluation_type.unique_in_site">
-        <source>unique in the site</source>
+        <source>Unique in the site</source>
       </trans-unit>
       <trans-unit id="extensionsettings.term_slug_evaluation_type.unique_in_instance">
-        <source>unique in the whole instance</source>
+        <source>Unique in the whole instance</source>
       </trans-unit>
 
 
