@@ -2,23 +2,23 @@
       xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
 
-  <dl>
-    <f:for each="{terms}" as="term">
-      <dt>
-        <f:comment>
-          <f:if condition="{term.termMode} == 'link'">
-            <f:then>
-              <f:link.typolink parameter="{term.termLink}">{term.name}</f:link.typolink>
-            </f:then>
-            <f:else>
-              <f:link.action action="show" arguments="{term: term}">{term.name}</f:link.action>
-            </f:else>
-          </f:if>
-        </f:comment>
-        {term.name}
-      </dt>
-      <dd>{term.tooltiptext}</dd>
-    </f:for>
-  </dl>
+      <div class="accordion" id="accordion-{cObject.uid}">
+        <f:for each="{terms}" as="term" iteration="i">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="heading-{i.cycle}">
+              <button class="accordion-button text-body px-4 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-{i.cycle}" aria-expanded="true" aria-controls="collapse-{i.cycle}">
+                {term.name}
+              </button>
+            </h2>
+            <div id="collapse-{i.cycle}" class="accordion-collapse collapse" aria-labelledby="heading-{i.cycle}" data-bs-parent="#accordion-{cObject.uid}">
+              <div class="accordion-body">
+                <header class="text-body">
+                  <h3>{term.tooltiptext}</h3>
+                </header>
+              </div>
+            </div>
+          </div>
+        </f:for>
+      </div>
 
 </html>

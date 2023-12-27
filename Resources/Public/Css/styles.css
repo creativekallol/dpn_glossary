@@ -5,11 +5,28 @@
 }
 .dpnglossary.pagination ul li {
     float: left;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin-left: 3px;
+    margin-right: 6px;
+    margin-bottom: 10px;
 }
 .dpnglossary.pagination ul li a {
     text-decoration: none;
+}
+.dpnglossary.pagination .page-item:not(.empty):not(.active) a {
+    text-decoration: underline;
+}
+.dpnglossary.pagination .page-item.empty a {
+    text-decoration: none;
+    pointer-events: none;
+    color: #999;
+}
+.dpnglossary.pagination .page-item.active a {
+    text-decoration: none;
+    pointer-events: none;
+}
+.dpnglossary.pagination ul li a::before {
+    content: "" !important;
+    margin: 0 !important;
 }
 .dpnglossary.pagination ul li.first {
     margin-left: 0;
@@ -31,8 +48,13 @@
     display: inline;
     position: relative;
     cursor: pointer;
+    text-decoration: underline dotted 2px;
 }
-.dpnglossary.link:hover:after {
+.dpnglossary.link::before {
+    content: "";
+    margin: 0;
+}
+.dpnglossary.link:hover::after {
     background: rgba(0, 0, 0, 0.8);
     border-radius: 5px;
     bottom: 26px;
@@ -44,7 +66,7 @@
     width: 220px;
     z-index: 98;
 }
-.dpnglossary.link:hover:before {
+.dpnglossary.link:hover::before {
     border: solid;
     border-color: #333 rgba(0, 0, 0, 0);
     border-width: 6px 6px 0;
@@ -53,4 +75,17 @@
     left: 50%;
     position: absolute;
     z-index: 99;
+}
+.dpnglossary .accordion-button::before {
+    content: "\f068";
+    font-family: 'Font Awesome 6 Pro';
+    display: inline-block;
+    margin-right: 15px;
+    transition: transform 0.3s ease;
+}
+.dpnglossary .accordion-button.collapsed::before {
+    content: "\f067";
+}
+.dpnglossary .accordion-button::after {
+    content: "";
 }

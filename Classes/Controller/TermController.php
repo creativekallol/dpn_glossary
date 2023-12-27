@@ -80,6 +80,7 @@ class TermController extends ActionController
         }
 
         $this->view->assignMultiple([
+            'cObject' => $this->configurationManager->getContentObject()->data,
             'listmode' => $this->settings['listmode'] ?? 'normal',
             'terms' => $terms,
         ]);

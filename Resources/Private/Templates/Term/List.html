@@ -38,10 +38,8 @@
 
       <f:render partial="Utilities/Paginator" arguments="{pagination: pagination, paginator: paginator}"/>
 
-      <div>
-        <dl>
-          <f:render partial="Term/List" arguments="{terms: paginator.paginatedItems}"/>
-        </dl>
+      <div class="dpnglossary mask-accordion mt-5">
+        <f:render partial="Term/List" arguments="{terms: paginator.paginatedItems, cObject: cObject}"/>
       </div>
 
     </f:if>
