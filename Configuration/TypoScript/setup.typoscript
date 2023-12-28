@@ -119,7 +119,7 @@ plugin.tx_dpnglossary {
             }
           }*/
 
-          ATagParams.dataWrap = title="{field:tooltiptext}" class="dpnglossary link"
+          ATagParams.dataWrap = title="{field:tooltiptext}{field:pseudotext}" class="dpnglossary link" data-bs-html="true"
           ATagParams.dataWrap {
             override = title="{field:name}" class="dpnglossary link"
             override.if.isFalse.data = field:tooltiptext

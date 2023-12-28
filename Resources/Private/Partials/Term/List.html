@@ -12,9 +12,12 @@
             </h2>
             <div id="collapse-{i.cycle}" class="accordion-collapse collapse" aria-labelledby="heading-{i.cycle}" data-bs-parent="#accordion-{cObject.uid}">
               <div class="accordion-body">
-                <header class="text-body">
-                  <h3>{term.tooltiptext}</h3>
-                </header>
+                <f:for each="{term.descriptions}" as="description">
+                  <header class="text-body">
+                    <h3>{description.meaning}</h3>
+                  </header>
+                  <f:format.html>{description.text}</f:format.html>
+                </f:for>
               </div>
             </div>
           </div>

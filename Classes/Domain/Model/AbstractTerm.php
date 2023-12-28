@@ -46,6 +46,11 @@ abstract class AbstractTerm extends AbstractEntity implements TermInterface
     /**
      * @var string
      */
+    protected string $pseudotext = '';
+
+    /**
+     * @var string
+     */
     protected string $termType = '';
 
     /**
@@ -146,6 +151,12 @@ abstract class AbstractTerm extends AbstractEntity implements TermInterface
      */
     public function getTooltiptext(): string
     {
+        $this->tooltiptext = trim($this->tooltiptext);
+
+        if (!empty($this->tooltiptext)) {
+            return '<p class=&quot;tttext&quot;>'.$this->tooltiptext.'<p/>';
+        }
+
         return $this->tooltiptext;
     }
 
@@ -155,6 +166,28 @@ abstract class AbstractTerm extends AbstractEntity implements TermInterface
     public function setTooltiptext(string $tooltiptext): void
     {
         $this->tooltiptext = $tooltiptext;
+    }
+
+    /**
+     * @return string $pseudotext
+     */
+    public function getPseudotext(): string
+    {
+        $this->pseudotext = trim($this->pseudotext);
+
+        if (!empty($this->pseudotext)) {
+            return '<p class=&quot;tttext&quot;>Leichte Sprache:<br />'.$this->pseudotext.'</p>';
+        }
+
+        return $this->pseudotext;
+    }
+
+    /**
+     * @param string $pseudotext
+     */
+    public function setPseudotext(string $pseudotext): void
+    {
+        $this->pseudotext = $pseudotext;
     }
 
     /**
@@ -313,6 +346,7 @@ abstract class AbstractTerm extends AbstractEntity implements TermInterface
             'parsing_name' => $this->getParsingName(),
             'url_segment' => $this->getUrlSegment(),
             'tooltiptext' => $this->getTooltiptext(),
+            'pseudotext' => $this->getPseudotext(),
             'term_type' => $this->getTermType(),
             'term_lang' => $this->getTermLang(),
             'term_mode' => $this->getTermMode(),

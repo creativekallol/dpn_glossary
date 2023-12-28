@@ -52,7 +52,7 @@
 }
 .dpnglossary.link::before {
     content: "";
-    margin: 0;
+    margin: 0 !important;
 }
 .dpnglossary.link:hover::after {
     background: rgba(0, 0, 0, 0.8);
@@ -88,4 +88,7 @@
 }
 .dpnglossary .accordion-button::after {
     content: "";
+}
+p.tttext {
+    text-align: left;
 }
