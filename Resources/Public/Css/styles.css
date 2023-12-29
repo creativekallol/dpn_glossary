@@ -6,7 +6,7 @@
 .dpnglossary.pagination ul li {
     float: left;
     margin-left: 3px;
-    margin-right: 6px;
+    margin-right: 5px;
     margin-bottom: 10px;
 }
 .dpnglossary.pagination ul li a {
@@ -54,7 +54,7 @@
     content: "";
     margin: 0 !important;
 }
-.dpnglossary.link:hover::after {
+/*.dpnglossary.link:hover::after {
     background: rgba(0, 0, 0, 0.8);
     border-radius: 5px;
     bottom: 26px;
@@ -75,7 +75,7 @@
     left: 50%;
     position: absolute;
     z-index: 99;
-}
+}*/
 .dpnglossary .accordion-button::before {
     content: "\f068";
     font-family: 'Font Awesome 6 Pro';
@@ -91,4 +91,10 @@
 }
 p.tttext {
     text-align: left;
+}
+.page-item-all {
+    text-decoration: none !important;
+}
+.page-item-all:hover {
+    color: #d20039;
 }

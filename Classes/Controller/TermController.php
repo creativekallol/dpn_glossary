@@ -68,13 +68,18 @@ class TermController extends ActionController
                 ]);
 
                 if ($paginator->getCurrentCharacter() !== null) {
-                    $pageTitle = !empty($GLOBALS['TSFE']->page['seo_title'])
+                    if ($paginator->getCurrentCharacter() == '_all') {
+                        $terms = $this->termRepository->findAll();
+                        $this->view->assign('showAll', true);
+                    } else {
+                        $pageTitle = !empty($GLOBALS['TSFE']->page['seo_title'])
                         ? $GLOBALS['TSFE']->page['seo_title']
                         : $GLOBALS['TSFE']->page['title'];
 
-                    /** @var \Featdd\DpnGlossary\PageTitle\CharacterPaginationPageTitleProvider $characterPaginationPageTitleProvider */
-                    $characterPaginationPageTitleProvider = GeneralUtility::makeInstance(CharacterPaginationPageTitleProvider::class);
-                    $characterPaginationPageTitleProvider->setTitle($pageTitle . ' - ' . $paginator->getCurrentCharacter());
+                        /** @var \Featdd\DpnGlossary\PageTitle\CharacterPaginationPageTitleProvider $characterPaginationPageTitleProvider */
+                        $characterPaginationPageTitleProvider = GeneralUtility::makeInstance(CharacterPaginationPageTitleProvider::class);
+                        $characterPaginationPageTitleProvider->setTitle($pageTitle . ' - ' . $paginator->getCurrentCharacter());
+                    }
                 }
             }
         }

@@ -189,6 +189,10 @@
       <trans-unit id="tt_content.parse_for_glossary">
         <target>Inhalt parsen</target>
       </trans-unit>
+
+      <trans-unit id="common.term_all">
+        <target>Alle</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

@@ -5,6 +5,7 @@
   <nav aria-label="A-Z Glossar">
     <div class="dpnglossary pagination">
       <ul class="pagination justify-content-center flex-wrap">
+        <li class="page-item"><f:link.action action="list" controller="Term" arguments="{currentCharacter: '_all'}" class="page-item-all fs-5 text-center">{f:translate(key: 'common.term_all')}</f:link.action></li>
         <f:for each="{pagination.characters}" as="character">
           <li class="page-item{f:if(condition: character.isEmpty, then: ' empty')}{f:if(condition: character.isCurrent, then: ' active')}">
             <f:link.action action="list" controller="Term" arguments="{currentCharacter: character.character}" class="page-link text-center border-0 {f:if(condition: character.isCurrent, then: 'bg-primary text-white border-0', else: 'bg-secondary')}">{character}</f:link.action>

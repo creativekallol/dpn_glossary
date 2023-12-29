@@ -189,6 +189,10 @@
       <trans-unit id="tt_content.parse_for_glossary">
         <source>Parse content element for glossary terms</source>
       </trans-unit>
+
+      <trans-unit id="common.term_all">
+        <source>All</source>
+      </trans-unit>
     </body>
   </file>
 </xliff>
